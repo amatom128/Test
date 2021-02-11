@@ -6,13 +6,17 @@
     </head>
     <body>
 
-        <div class=container></div>
+        <div class="input_file">
             <b>input file</b>
+            <form action="api/csv" method="post" enctype="multipart/form-data">
                 <label for="myfile">Select a file:</label>
                 <input type="file" id="myfile" name="myfile" />
-        <div class="container1"</div>
-            <b>Question</b>
-                <div class="container2"</div>
+                <input type="submit"/>
+            </form>
+        </div>
+                
+        <div class="Show_answer">
+            <b>Answer</b>
         <form method="post">
             <label for="Answer">Answer</label>
             <input type="text" name="Answer" />

@@ -1,5 +1,5 @@
 {
   "TestFramework": "unittest",
-  "Interpreter": "Global|PythonCore|3.7",
-  "SuppressPackageInstallationPrompt": true
+  "SuppressPackageInstallationPrompt": true,
+  "Interpreter": "Global|PythonCore|3.9"
 }
