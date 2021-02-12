@@ -3,5 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class Questions(Base):
-    __tablename__ = 'Quiz'
+class HistoryQuiz(Base):
+    __tablename__ = 'historyquiz'
+    quiz_id = Column(Integer,primary_key=True)
+    question = Column(String,nullable=True)
+    answer = Column(String,nullable=True)

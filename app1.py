@@ -1,5 +1,7 @@
 from flask import Flask,render_template,request
 from flask_cors import CORS
+from modules.sql import HistoryQuiz
+from flask_sqlalchemy import SQLAlchemy
 import io
 import csv
 
@@ -9,7 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 cors = CORS(app,resource={r"/api/*":{"origins":"*"}})
 
-@app.route('/api')
+@app.route('/home',methods=['GET'])
 def home():
     return render_template("index.html")
 
@@ -20,7 +22,7 @@ def upload():
     if not f:
         return "No File"
 
-    stream = io.StringIO(f.stream.read().decode("UTF8"),newline=None)
+    stream = io.StringIO(f.stream.read().decode("UTF8"))
     csv_input = csv.reader(stream)
     print(csv_input)
     for row in csv_input:
