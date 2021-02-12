@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect, url_for
 from flask_cors import CORS
 from modules.sql import HistoryQuiz
 from flask_sqlalchemy import SQLAlchemy
@@ -28,7 +28,7 @@ def upload():
     for row in csv_input:
         print(row)
 
-    return render_template("index.html")
+    return redirect(url_for('home'))
     
 if __name__ == "__main__":
     app.run()
